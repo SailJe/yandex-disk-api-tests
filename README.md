@@ -49,12 +49,10 @@ pytest -v
 pytest -m smoke
 pytest -m negative
 pytest -m unit
-pytest -m "not concurrency"
 ```
 
 `smoke` — основные операции, `negative` — ошибки, `unit` — тесты без сети.
-Также доступны `auth`, `e2e` и `integration`. Маркер `concurrency` зарегистрирован,
-но конкурентных тестов нет.
+Также доступны `auth`, `e2e` и `integration`.
 
 ## Структура
 

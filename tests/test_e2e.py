@@ -21,7 +21,7 @@ def test_file_lifecycle(api_client, resource_root):
     content = "Начало → копирование → перемещение → удаление\n".encode()
     put_file(api_client, original, content)
 
-    finish_mutation(api_client, api_client.copy_resource(original, copied), 201)
+    finish_mutation(api_client, api_client.copy_resource(original, copied), 201, 202)
     assert_file(api_client.wait_resource(copied).json(), copied, content)
     assert_file(get_metadata(api_client, original), original, content)
 

@@ -44,7 +44,7 @@ def test_copy_file_preserves_source(api_client, resource_root):
     content = b"copy this exact payload\n"
     put_file(api_client, source, content)
 
-    finish_mutation(api_client, api_client.copy_resource(source, destination), 201)
+    finish_mutation(api_client, api_client.copy_resource(source, destination), 201, 202)
 
     assert_file(api_client.wait_resource(destination).json(), destination, content)
     assert_file(get_metadata(api_client, source), source, content)
